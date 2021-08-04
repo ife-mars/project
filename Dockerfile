@@ -1,4 +1,5 @@
 FROM devopsedu/webapp
+RUN apt-get update -y
+RUN apt-get install -y apache2
+ADD website /var/www/html
 CMD apachectl -D FOREGROUND
-RUN rm var/www/html/index.html
-ADD http://php.net   /var/www/html
